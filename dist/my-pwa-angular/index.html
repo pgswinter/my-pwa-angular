@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MyPwaAngular</title>
+  <!-- CODELAB: Add link rel manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- CODELAB: Add iOS meta tags and icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PWAAngular">
+  <link rel="apple-touch-icon" href="/static/mcivn/images/icon-128x128.png">
+  <link rel="apple-touch-icon" href="/static/mcivn/images/icon-256x256.png">
+  <link rel="apple-touch-icon" href="/static/mcivn/images/icon-512x512.png">
+  <!-- CODELAB: Add description here -->
+  <meta name="description" content="A sample test app">
+  <!-- CODELAB: Add meta theme-color -->
+  <meta name="theme-color" content="#555" />
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div class="app-root"></div>
+  <!-- <app-root></app-root> -->
+  <script type="text/javascript" src="runtime.js"></script>
+  <script type="text/javascript" src="polyfills.js"></script>
+  <script type="text/javascript" src="styles.js"></script>
+  <script type="text/javascript" src="vendor.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script>
+    // CODELAB: Register service worker.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((reg) => {
+            // reg.update();
+            console.log('Service worker registered.', reg);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>
